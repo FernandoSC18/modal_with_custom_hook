@@ -8,3 +8,9 @@ Only you need install styled components.
 
 ## What is that?
 That's not a react proyect, just is a react component and react custom hook of a Modal / Popup
+
+## How Use
+ - Just copy components to your react / nextjs proyect 
+ - import and use 
+ 
+ chech app.js file for see how import and use.
