@@ -6,7 +6,7 @@ This is a modal resourse for youtube video
 ## Requirements
 Only you need install styled components.
 
-## What is that?
+## What is this?
 That's not a react proyect, just is a react component and react custom hook of a Modal / Popup
 
 ## How to use
