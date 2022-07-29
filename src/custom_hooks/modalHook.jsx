@@ -1,10 +1,16 @@
 import styled, {keyframes} from 'styled-components';   
-import React, {  useState } from "react" 
+import React, {  useEffect, useState } from "react" 
 
-function useModal ( ) { 
+function useModal ( textTitle ) {  
     
     const [show, setShow] = useState(false)
-    
+    const [title, setTitle] = useState('Modal')
+
+    useEffect(()=>{
+        setTitle(textTitle)
+    }, [])
+
+     
     const changeShow = () => {
         setShow(!show)
     } 
@@ -12,6 +18,7 @@ function useModal ( ) {
     return {
         changeShow, 
         show, 
+        title, 
     }
 }
 
@@ -23,7 +30,7 @@ function ModalHook ( {modalHook, content} ) {
     return modalHook.show 
     ? <ModalBackArea onClick={modalHook.changeShow }>
                 <ModalArea onClick={(e) => e.stopPropagation() }> 
-                    <Title> Title </Title>
+                    <Title> {modalHook.title} </Title>
                     <BtnClose onClick={modalHook.changeShow }> X </BtnClose>
                     <br /> 
                     {content}
@@ -73,7 +80,6 @@ const ModalArea = styled.div`
     animation: ${started} 500ms normal ; 
     -webkit-box-shadow: 0 0 10px 0px #000000;
     box-shadow: 0 0 10px 0px #000000; 
-
 `
 
 const Title = styled.p` 
