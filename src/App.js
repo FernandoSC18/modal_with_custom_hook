@@ -15,7 +15,7 @@ function App() {
 
   /// HOOK
  
-  const modalHook = useModal()
+  const modalHook = useModal('Aqui Tu Titulo')
   
   const handleModalHook = () =>{  
     modalHook.changeShow()
